@@ -7,7 +7,41 @@
   </head>
   <body>
     <script>
+      let h_score = 0;
+      let c_score = 0;
       console.log("Checking Proper linking of javascript...");
+      function getComputerChoice() {
+        let c = Math.floor(Math.random() * 10);
+        let c_choice;
+        if (c <= 3) {
+          c_choice = "rock";
+        }
+        if (c > 3 && c <= 6) {
+          c_choice = "paper";
+        }
+        if (c > 6) {
+          c_choice = "scissors";
+        }
+        console.log(c_choice);
+        return c_choice;
+      }
+
+      function getHumanChoice() {
+        let h = prompt("What do you choose?");
+        h_choice = h.toLowerCase();
+        console.log(h_choice);
+        return h_choice;
+      }
+
+      let computerchoice = getComputerChoice();
+      let humanchoice = getHumanChoice();
+      playRound(computerchoice, humanchoice);
+
+      function playRound(computerchoice, humanchoice) {
+        console.log(`You chose ${humanchoice}`);
+        console.log("The computer chose....\n");
+        console.log(`${computerchoice}!`);
+      }
     </script>
   </body>
 </html>
