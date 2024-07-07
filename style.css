@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+body {
+  font-family: "Short Stack", cursive;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,6 +10,7 @@ body {
   justify-content: space-evenly;
   flex-grow: 1;
 }
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
 
 #buttons {
   display: flex;
@@ -12,6 +18,16 @@ body {
   flex-shrink: 1;
   flex-direction: row;
   width: 1000px;
-  justify-content: space-between;
+  height: 500px;
+  justify-content: space-evenly;
   margin-top: 300px;
+  border-style: dashed;
+  align-items: center;
+}
+
+button {
+  display: flex;
+  width: 100px;
+  text-align: justify;
+  font-family: "Short Stack", cursive;
 }

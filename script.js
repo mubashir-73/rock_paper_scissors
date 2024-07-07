@@ -1,5 +1,6 @@
 let h_score = 0;
 let c_score = 0;
+let roundNumber = 0;
 console.log("Checking Proper linking of javascript...");
 function getComputerChoice() {
   let c = Math.floor(Math.random() * 10);
@@ -33,57 +34,62 @@ btn.addEventListener("click", (event) => {
 });
 
 function playRound(computerchoice, humanchoice) {
-  console.log(`You chose ${humanchoice}`);
-  console.log("The computer chose....\n");
-  console.log(`${computerchoice}!`);
+  roundNumber += 1;
+  alert(`You chose ${humanchoice}, the computer chose....${computerchoice}!\n`);
   switch (computerchoice + "," + humanchoice) {
     case "rock,scissors":
-      console.log("You lose! Rock beats Scissors. ");
+      alert("You lose! Rock beats Scissors. ");
       c_score += 1;
       break;
     case "scissors,scissors":
-      console.log("It's a Draw! Both have chosen scissors!");
+      alert("It's a Draw! Both have chosen scissors!");
       break;
     case "paper,scissors":
-      console.log("You win! Scissors beat Paper. ");
+      alert("You win! Scissors beat Paper. ");
       h_score += 1;
       break;
     case "rock,rock":
-      console.log("It's a Draw! Both have chosen rock!");
+      alert("It's a Draw! Both have chosen rock!");
       break;
     case "scissors,rock":
-      console.log("You win! Rock beats Scissors. ");
+      alert("You win! Rock beats Scissors. ");
       h_score += 1;
       break;
     case "paper,rock":
-      console.log("You lose! Paper beats Rock!. ");
+      alert("You lose! Paper beats Rock!. ");
       c_score += 1;
       break;
     case "rock,paper":
-      console.log("You win! Paper beats Rock! ");
+      alert("You win! Paper beats Rock! ");
       h_score += 1;
       break;
     case "scissors,paper":
-      console.log("You lose! Scissors beat Paper. ");
+      alert("You lose! Scissors beat Paper. ");
       c_score += 1;
       break;
     case "paper,paper":
-      console.log("It's a Draw! Both have chosen paper! ");
+      alert("It's a Draw! Both have chosen paper! ");
       break;
     default:
-      console.log("Invalid input please try again.");
+      alert("Invalid input please try again.");
       break;
   }
+  if (roundNumber > 5) {
+    finalScore(h_score, c_score);
+  }
+}
+
+function finalScore(h_score, c_score) {
   if (h_score > c_score) {
-    console.log("You won!");
+    alert("You won!");
   } else {
     if (c_score > h_score) {
-      console.log("You lost!");
+      alert("You lost!");
     } else {
-      console.log("Nobody won.");
+      alert("Nobody won.");
     }
   }
-  console.log(`Your score is: ${h_score} and computer score is ${c_score} .`);
+  alert(`Your score is: ${h_score} and computer score is ${c_score} .`);
 }
 
 //for (let i = 0; i < 6; i++) {
